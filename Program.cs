@@ -37,6 +37,33 @@ internal class StackNQueueProgram
         }
         Console.WriteLine();
     }
+    public void Peak()
+    {
+        if (this.top == null)
+        {
+            Console.WriteLine("Stack is empty");
+            return;
+        }
+        Console.WriteLine($"{this.top.data} is in the top of the stack");
+    }
+    public void Pop()
+    {
+        if (this.top == null)
+        {
+            Console.WriteLine("Stack is empty, Deletion is not possible");
+            return;
+        }
+        Console.WriteLine($"Value popped is {this.top.data}");
+        this.top = this.top.next;
+    }
+    public void IsEmpty()
+    {
+        while (this.top != null)
+        {
+            Peak();
+            Pop();
+        }
+    }
 }
 internal class Program
 {
@@ -46,6 +73,13 @@ internal class Program
         app.Push(70);
         app.Push(30);
         app.Push(56);
+        Console.WriteLine(">>>Peak(): ");
+        app.Peak();
+        Console.WriteLine(">>>Pop(): ");
+        app.Pop();
+        Console.WriteLine(">>>:IsEmpty(): ");
+        app.IsEmpty();
+        Console.Write(">>>: ");
         app.Display();
     }
 }
