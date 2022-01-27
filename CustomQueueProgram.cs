@@ -19,6 +19,17 @@ internal class CustomQueueProgram
         }
         Console.WriteLine($"inserted into list {node.data}");
     }
+    public void Dequeue()
+    {
+        if (this.top == null)
+        {
+            Console.WriteLine("The Queue is empty");
+            return;
+        }
+        var temp = this.top;
+        this.top = this.top.next;
+        Console.WriteLine($"\n Item deleted is {temp.data}");
+    }
     public void Display()
     {
         var temp = this.top;

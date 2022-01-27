@@ -22,6 +22,9 @@ internal class Program
         app2.Enqueue(30);
         app2.Enqueue(70);
         app2.Display();
-
+        app2.Dequeue();
+        app2.Display();
+        app2.Dequeue();
+        app2.Display();
     }
 }
